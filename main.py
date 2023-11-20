@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 
 # Read the data
 df = pd.read_csv("PATIENTDATA.csv")
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Plotting histogram
 df_show = df[df['No-show'] == 'No']
 df_no_show = df[df['No-show'] == 'Yes']
-st.set_option('deprecation.showPyplotGlobalUse', False)
 plt.hist(df_show['Age'], alpha=0.5, color='purple', label='Showed up')
 plt.hist(df_no_show['Age'], alpha=0.5, color='pink', label="Didn't show up")
 plt.legend()
